@@ -507,5 +507,13 @@
         "priority": 2,
         "description": "binomial",
         "triggerWhenComplete": true
+    },
+    {
+        "prefix": "(^|[^\\\\])(alpha|beta|gamma|delta|epsilon|zeta|eta|theta|iota|kappa|lambda|mu|nu|xi|omicron|pi|rho|sigma|tau|upsilon|phi|chi|psi|omega|Alpha|Beta|Gamma|Delta|Epsilon|Zeta|Eta|Theta|Iota|Kappa|Lambda|Mu|Nu|Xi|Omicron|Pi|Rho|Sigma|Tau|Upsilon|Phi|Chi|Psi|Omega)",
+        "body": "$1$\\$2$$1$ $$2",
+        "mode": "text",
+        "priority": 1,
+        "description": "greeks",
+        "triggerWhenComplete": true
     }
 ]
