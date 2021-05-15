@@ -225,3 +225,22 @@ snippet subnotestemplates A
 $0
 \end{document} 
 endsnippet
+
+
+# snippet `(\w+)(?=ct;)` A
+# `` rv = '\\text{' + m[1] + '}{'``$1`` rv = '}' ``
+# endsnippet
+
+snippet `(\w+)ct\;` A
+`` rv = '\\textcolor{' + m[1] + '}{'``$1`` rv = '}' ``
+endsnippet
+
+snippet ni; A
+\noindent 
+endsnippet
+
+snippet itemize A
+\begin{itemize}
+    \item $0
+\end{itemize}
+endsnippet
