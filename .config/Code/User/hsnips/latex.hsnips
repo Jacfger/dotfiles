@@ -69,7 +69,7 @@ snippet mainnotestemplate A
 \declaretheoremstyle[
 	headfont=\sffamily\bfseries\color{MidnightBlue},
 	mdframed={style=mdbluebox},
-	headpunct={\\\\[3pt]},
+	headpunct={\\[3pt]},
 	postheadspace={0pt}
 ]{thmbluebox}
 
@@ -89,7 +89,7 @@ snippet mainnotestemplate A
 \declaretheoremstyle[
 	headfont=\bfseries\color{RawSienna},
 	mdframed={style=mdredbox},
-	headpunct={\\\\[3pt]},
+	headpunct={\\[3pt]},
 	postheadspace={0pt},
 ]{thmredbox}
 
@@ -108,7 +108,7 @@ snippet mainnotestemplate A
 }
 \declaretheoremstyle[
 	mdframed={style=mdblackbox},
-	headpunct={\\\\[3pt]},
+	headpunct={\\[3pt]},
 	postheadspace={0pt},
 ]{thmblackbox}
 \declaretheorem[%
@@ -195,8 +195,8 @@ style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
 \cfoot{\fancyplain{}{\thepage}}
 
 \title{
-{\LARGE $1 - ${2:CourseName}} \\\\
-\textbf{\large Taught by ${4:InstructorName}}\\\\
+{\LARGE $1 - ${2:CourseName}} \\
+\textbf{\large Taught by ${4:InstructorName}}\\
 \textbf{\large Notes by Jacfger}
 }
 
@@ -215,7 +215,7 @@ $0
 endsnippet
 
 snippet subnotestemplates A
-\documentclass[../main/main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 
 
 \begin{document}
@@ -228,11 +228,11 @@ endsnippet
 
 
 # snippet `(\w+)(?=ct;)` A
-# `` rv = '\\text{' + m[1] + '}{'``$1`` rv = '}' ``
+# `` rv = '\text{' + m[1] + '}{'``$1`` rv = '}' ``
 # endsnippet
 
 snippet `(\w+)ct\;` A
-`` rv = '\\textcolor{' + m[1] + '}{'``$1`` rv = '}' ``
+`` rv = '\textcolor{' + m[1] + '}{'``$1`` rv = '}' ``
 endsnippet
 
 snippet ni; A
@@ -244,3 +244,31 @@ snippet itemize A
     \item $0
 \end{itemize}
 endsnippet
+
+global
+function math(context) {
+    return context.scopes.some(s => s.startsWith("meta.math"));
+}
+endglobal
+
+context math(context)
+snippet inv "inverse" Ai
+^{-1}
+endsnippet
+
+
+context math(context)
+snippet => "implies" Ai
+\implies 
+endsnippet
+
+priority 2
+context math(context)
+snippet `(([\d\.]+)|([\d\.]*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d|[A-Za-z]|\\\w+))*!?)\/` "fracs" Ai
+\frac{``rv = m[1]``}{$1}$0
+endsnippet
+
+priority 0 
+context math(context)
+snippet `[\(\[{](.+)[\)\]}] ?\/` "fracs but with bracks" Ai
+\frac{``rv = m[1]``}{$1}$0
