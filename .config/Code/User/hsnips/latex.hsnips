@@ -270,5 +270,5 @@ endsnippet
 
 priority 0 
 context math(context)
-snippet `[\(\[{](.+)[\)\]}] ?\/` "fracs but with bracks" Ai
+snippet `\((.+)\) ?\/` "fracs but with bracks" Ai
 \frac{``rv = m[1]``}{$1}$0
