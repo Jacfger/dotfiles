@@ -21,3 +21,6 @@ git config --global user.email "ncfung@ust.hk"
 
 ## Install Python and neovim
 ./scripts/neovim.sh
+
+## Install Zotero
+./scripts/zotero.fish

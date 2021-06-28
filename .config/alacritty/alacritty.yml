@@ -3,6 +3,9 @@ font:
   normal:
     family: FiraCode Nerd Font Mono
 
+window:
+  decorations: none
+
 # Colors (Gruvbox dark)
 # https://github.com/eendroroy/alacritty-theme/blob/master/themes/gruvbox_dark.yaml
 colors:

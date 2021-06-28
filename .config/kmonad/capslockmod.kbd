@@ -47,7 +47,7 @@
 )
 (deflayer capslockmods
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    lmet _    _    _    S-A-t _   home pgdn pgup end  _    _    _
+  _    lmet _    _    _    M-t  _   home pgdn pgup end  _    _    _
   _    _    _    _    lsft _    left down up   rght _    _    @csp
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              lctl           _    _    _    _
